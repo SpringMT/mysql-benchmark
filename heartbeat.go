@@ -73,7 +73,7 @@ func (result *heartBeatResults) show() {
 			}
 		}
 		min, max, ave := calcMinAndMaxAndAve(result.Results[v].Durations)
-		fmt.Println(time.Unix(v, 0), res.Success, res.Failed, duplicated, fmt.Sprintf("%.2f ms", min), fmt.Sprintf("%.2f ms", max), fmt.Sprintf("%.2f ms", ave))
+		fmt.Println(time.Unix(v, 0), res.Success, res.Failed, duplicated, fmt.Sprintf("%.2f ms", min), fmt.Sprintf("%.2f ms", max), fmt.Sprintf("%.2f ms", ave), fmt.Sprintf("%.2f qps", 1000/min), fmt.Sprintf("%.2f qps", 1000/max), fmt.Sprintf("%.2f qps", 1000/ave))
 	}
 	for k, v := range duplicatedResult {
 		fmt.Printf("Incremented Value %d is duplicated at %s\n", k, strings.Join(v, ","))

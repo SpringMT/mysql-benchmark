@@ -13,7 +13,7 @@ type MysqlClient struct {
 
 func (mc *MysqlClient) increment(table string, valueColumn string) (int64, error) {
 	stmt := fmt.Sprintf(
-		"UPDATE %s SET %s = LAST_INSERT_ID(%s + ?)",
+		"UPDATE %s SET %s = LAST_INSERT_ID(%s + 1)",
 		table,
 		valueColumn,
 		valueColumn,
