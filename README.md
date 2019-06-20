@@ -10,6 +10,11 @@ CREATE TABLE IF NOT EXISTS sequence (
   id bigint(20) unsigned DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_bin ROW_FORMAT=DYNAMIC;
 INSERT IGNORE INTO sequence VALUES (0);
+
+CREATE TABLE IF NOT EXISTS sequence_myiasm (
+  id bigint(20) unsigned DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_bin ROW_FORMAT=DYNAMIC;
+INSERT IGNORE INTO sequence_myiasm VALUES (0);
 ```
 
 ### GRANT
